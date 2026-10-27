@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rnv"
+version = "1.1.0"
+description = "Ranking is not valuation: selection-aware carbon claims under supplier shift"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "requests>=2.31",
+]
+
+[project.urls]
+Repository = "https://github.com/Vatsal-Jha256/ranking-is-not-valuation"
+Issues = "https://github.com/Vatsal-Jha256/ranking-is-not-valuation/issues"
+
+[tool.setuptools.packages.find]
+include = ["rnv*"]

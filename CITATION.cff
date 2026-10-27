@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "Please cite the workshop paper when using this code or its results."
+type: software
+title: "Ranking Is Not Valuation: Selection-Aware Carbon Claims under Supplier Shift"
+authors:
+  - family-names: Jha
+    given-names: Vatsal
+  - family-names: Srivastava
+    given-names: Anupam
+  - family-names: Bragadeshwaran
+    given-names: Ashok
+version: 1.1.0
+date-released: 2026-10-28
+repository-code: "https://github.com/Vatsal-Jha256/ranking-is-not-valuation"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Ranking Is Not Valuation: Selection-Aware Carbon Claims under Supplier Shift"
+  authors:
+    - family-names: Jha
+      given-names: Vatsal
+    - family-names: Srivastava
+      given-names: Anupam
+    - family-names: Bragadeshwaran
+      given-names: Ashok
+  year: 2026
+  conference:
+    name: "Tackling Climate Change with Machine Learning at NeurIPS 2026"

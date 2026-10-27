@@ -1,0 +1,262 @@
+{
+  "title": "Rank-then-report architecture for carbon procurement",
+  "canvas": {
+    "width": 1120,
+    "height": 350
+  },
+  "style": {
+    "font_family": "Arial, Helvetica, sans-serif",
+    "font_size": 17,
+    "bg_color": "#FFFFFF",
+    "palette": [
+      "#0072B2",
+      "#009E73",
+      "#D55E00",
+      "#6B7280"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "eligible",
+      "label": "Eligible bids",
+      "x": 125,
+      "y": 68,
+      "width": 175,
+      "height": 58,
+      "shape": "rounded",
+      "fill": "#FFFFFF",
+      "stroke": "#7AAED0"
+    },
+    {
+      "id": "predict",
+      "label": "Predict GWP",
+      "x": 350,
+      "y": 68,
+      "width": 165,
+      "height": 58,
+      "shape": "rounded",
+      "fill": "#FFFFFF",
+      "stroke": "#0072B2"
+    },
+    {
+      "id": "winner",
+      "label": "Select W",
+      "sublabel": "minimum score",
+      "x": 565,
+      "y": 68,
+      "width": 180,
+      "height": 58,
+      "shape": "rounded",
+      "fill": "#FFFFFF",
+      "stroke": "#0072B2"
+    },
+    {
+      "id": "choice",
+      "label": "Procure W",
+      "sublabel": "same product choice",
+      "x": 815,
+      "y": 68,
+      "width": 190,
+      "height": 58,
+      "shape": "rounded",
+      "fill": "#EAF7F1",
+      "stroke": "#009E73"
+    },
+    {
+      "id": "reuse",
+      "label": "Reuse selected score",
+      "x": 745,
+      "y": 158,
+      "width": 215,
+      "height": 54,
+      "shape": "rounded",
+      "fill": "#FFF1EC",
+      "stroke": "#D55E00"
+    },
+    {
+      "id": "point_claim",
+      "label": "Point saving",
+      "sublabel": "reference − score",
+      "x": 965,
+      "y": 158,
+      "width": 200,
+      "height": 54,
+      "shape": "rounded",
+      "fill": "#FFF1EC",
+      "stroke": "#D55E00"
+    },
+    {
+      "id": "calibration",
+      "label": "Calibration evidence",
+      "sublabel": "supplier-disjoint",
+      "x": 245,
+      "y": 265,
+      "width": 205,
+      "height": 54,
+      "shape": "rounded",
+      "fill": "#FFFFFF",
+      "stroke": "#6B7280"
+    },
+    {
+      "id": "reporter",
+      "label": "Selection-aware report",
+      "sublabel": "deployed selection rule",
+      "x": 495,
+      "y": 265,
+      "width": 205,
+      "height": 54,
+      "shape": "rounded",
+      "fill": "#EAF7F1",
+      "stroke": "#009E73"
+    },
+    {
+      "id": "support",
+      "label": "Support?",
+      "x": 705,
+      "y": 265,
+      "width": 120,
+      "height": 62,
+      "shape": "diamond",
+      "fill": "#FFFFFF",
+      "stroke": "#009E73"
+    },
+    {
+      "id": "saving_floor",
+      "label": "Saving floor",
+      "sublabel": "adequate support",
+      "x": 900,
+      "y": 232,
+      "width": 190,
+      "height": 54,
+      "shape": "rounded",
+      "fill": "#EAF7F1",
+      "stroke": "#009E73"
+    },
+    {
+      "id": "verify",
+      "label": "Verify / withhold",
+      "sublabel": "weak support",
+      "x": 900,
+      "y": 300,
+      "width": 190,
+      "height": 54,
+      "shape": "rounded",
+      "fill": "#FFFFFF",
+      "stroke": "#6B7280"
+    }
+  ],
+  "edges": [
+    {
+      "from": "eligible",
+      "to": "predict",
+      "color": "#4B5563",
+      "thickness": 2
+    },
+        {
+            "from": "predict",
+            "to": "winner",
+            "color": "#0072B2",
+      "thickness": 2
+    },
+        {
+            "from": "winner",
+            "to": "choice",
+            "color": "#009E73",
+      "thickness": 2
+    },
+    {
+      "from": "winner",
+      "to": "reuse",
+      "color": "#D55E00",
+      "thickness": 2
+    },
+    {
+      "from": "reuse",
+      "to": "point_claim",
+      "color": "#D55E00",
+      "thickness": 2
+    },
+    {
+      "from": "winner",
+      "to": "reporter",
+      "color": "#009E73",
+      "thickness": 2,
+      "curve": false
+    },
+    {
+      "from": "calibration",
+      "to": "reporter",
+      "color": "#009E73",
+      "thickness": 2
+    },
+    {
+      "from": "reporter",
+      "to": "support",
+      "color": "#009E73",
+      "thickness": 2
+    },
+    {
+      "from": "support",
+      "to": "saving_floor",
+      "color": "#009E73",
+      "thickness": 2
+    },
+    {
+      "from": "support",
+      "to": "verify",
+      "style": "dashed",
+      "color": "#6B7280",
+      "thickness": 2
+    }
+  ],
+  "groups": [
+    {
+      "id": "selection",
+            "label": "RANK AND SELECT",
+      "node_ids": [
+        "eligible",
+        "predict",
+        "winner",
+        "choice"
+      ],
+      "fill": "#F4F9FC",
+      "stroke": "#B9D7E8",
+      "padding": 22
+    },
+        {
+            "id": "current",
+            "label": "",
+      "node_ids": [
+        "reuse",
+        "point_claim"
+      ],
+      "fill": "#FFF8F5",
+      "stroke": "#F0B6A1",
+      "padding": 18
+    },
+    {
+      "id": "proposed",
+      "label": "RANK-THEN-REPORT",
+      "node_ids": [
+        "calibration",
+        "reporter",
+        "support",
+        "saving_floor",
+        "verify"
+      ],
+      "fill": "#F3FAF7",
+      "stroke": "#A9D8C7",
+      "padding": 18
+    }
+  ],
+    "labels": [
+        {
+            "text": "change the report, not the choice",
+            "x": 690,
+            "y": 342,
+            "font_size": 17,
+      "color": "#007A59",
+      "anchor": "middle"
+    }
+  ]
+}

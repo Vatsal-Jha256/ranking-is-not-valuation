@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 350" width="1120" height="350" font-family="Arial, Helvetica, sans-serif">
+  <rect width="1120" height="350" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arrow-default" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#555555"/>
+    </marker>
+    <marker id="arrow-c0" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#0072B2"/>
+    </marker>
+    <marker id="arrow-c1" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#009E73"/>
+    </marker>
+    <marker id="arrow-c2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#D55E00"/>
+    </marker>
+    <marker id="arrow-c3" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#6B7280"/>
+    </marker>
+  </defs>
+  <rect x="15.5" y="17.0" width="916.5" height="102.0" fill="#F4F9FC" stroke="#B9D7E8" stroke-width="1" rx="8"/>
+  <text x="23.5" y="33.0" font-size="16" fill="#999999" font-weight="bold">RANK AND SELECT</text>
+  <rect x="619.5" y="113.0" width="463.5" height="90.0" fill="#FFF8F5" stroke="#F0B6A1" stroke-width="1" rx="8"/>
+  <rect x="124.5" y="187.0" width="888.5" height="158.0" fill="#F3FAF7" stroke="#A9D8C7" stroke-width="1" rx="8"/>
+  <text x="132.5" y="203.0" font-size="16" fill="#999999" font-weight="bold">RANK-THEN-REPORT</text>
+  <path d="M 212.5,68.0 L 267.5,68.0" stroke="#4B5563" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <path d="M 432.5,68.0 L 475.0,68.0" stroke="#0072B2" stroke-width="2" fill="none" marker-end="url(#arrow-c0)"/>
+  <path d="M 655.0,68.0 L 720.0,68.0" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#arrow-c1)"/>
+  <path d="M 623.0,97.0 L 691.0,131.0" stroke="#D55E00" stroke-width="2" fill="none" marker-end="url(#arrow-c2)"/>
+  <path d="M 852.5,158.0 L 865.0,158.0" stroke="#D55E00" stroke-width="2" fill="none" marker-end="url(#arrow-c2)"/>
+  <path d="M 554.7,97.0 L 504.6,238.0" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#arrow-c1)"/>
+  <path d="M 347.5,265.0 L 392.5,265.0" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#arrow-c1)"/>
+  <path d="M 597.5,265.0 L 645.0,265.0" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#arrow-c1)"/>
+  <path d="M 750.2,257.4 L 805.0,248.1" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#arrow-c1)"/>
+  <path d="M 749.5,273.0 L 805.0,282.9" stroke="#6B7280" stroke-width="2" fill="none" marker-end="url(#arrow-c3)" stroke-dasharray="8,4"/>
+  <rect x="37.5" y="39.0" width="175.0" height="58.0" fill="#FFFFFF" stroke="#7AAED0" stroke-width="2" rx="8"/>
+  <text x="125.0" y="74.0" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Eligible bids</text>
+  <rect x="267.5" y="39.0" width="165.0" height="58.0" fill="#FFFFFF" stroke="#0072B2" stroke-width="2" rx="8"/>
+  <text x="350.0" y="74.0" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Predict GWP</text>
+  <rect x="475.0" y="39.0" width="180.0" height="58.0" fill="#FFFFFF" stroke="#0072B2" stroke-width="2" rx="8"/>
+  <text x="565.0" y="64.5" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Select W</text>
+  <text x="565.0" y="83.5" font-size="17.5" fill="#666666" text-anchor="middle">minimum score</text>
+  <rect x="720.0" y="39.0" width="190.0" height="58.0" fill="#EAF7F1" stroke="#009E73" stroke-width="2" rx="8"/>
+  <text x="815.0" y="64.5" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Procure W</text>
+  <text x="815.0" y="83.5" font-size="17.5" fill="#666666" text-anchor="middle">same product choice</text>
+  <rect x="637.5" y="131.0" width="215.0" height="54.0" fill="#FFF1EC" stroke="#D55E00" stroke-width="2" rx="8"/>
+  <text x="745.0" y="163.9" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Reuse selected score</text>
+  <rect x="865.0" y="131.0" width="200.0" height="54.0" fill="#FFF1EC" stroke="#D55E00" stroke-width="2" rx="8"/>
+  <text x="965.0" y="154.4" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Point saving</text>
+  <text x="965.0" y="173.4" font-size="17.5" fill="#666666" text-anchor="middle">reference − score</text>
+  <rect x="142.5" y="238.0" width="205.0" height="54.0" fill="#FFFFFF" stroke="#6B7280" stroke-width="2" rx="8"/>
+  <text x="245.0" y="261.4" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Calibration evidence</text>
+  <text x="245.0" y="280.4" font-size="17.5" fill="#666666" text-anchor="middle">supplier-disjoint</text>
+  <rect x="392.5" y="238.0" width="205.0" height="54.0" fill="#EAF7F1" stroke="#009E73" stroke-width="2" rx="8"/>
+  <text x="495.0" y="261.4" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Selection-aware report</text>
+  <text x="495.0" y="280.4" font-size="17.5" fill="#666666" text-anchor="middle">deployed selection rule</text>
+  <polygon points="705.0,234.0 765.0,265.0 705.0,296.0 645.0,265.0" fill="#FFFFFF" stroke="#009E73" stroke-width="2"/>
+  <text x="705.0" y="270.9" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Support?</text>
+  <rect x="805.0" y="205.0" width="190.0" height="54.0" fill="#EAF7F1" stroke="#009E73" stroke-width="2" rx="8"/>
+  <text x="900.0" y="228.4" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Saving floor</text>
+  <text x="900.0" y="247.4" font-size="17.5" fill="#666666" text-anchor="middle">adequate support</text>
+  <rect x="805.0" y="273.0" width="190.0" height="54.0" fill="#FFFFFF" stroke="#6B7280" stroke-width="2" rx="8"/>
+  <text x="900.0" y="296.4" font-size="17" fill="#333333" text-anchor="middle" font-weight="bold">Verify / withhold</text>
+  <text x="900.0" y="315.4" font-size="17.5" fill="#666666" text-anchor="middle">weak support</text>
+  <text x="690.0" y="342.0" font-size="17" fill="#007A59" text-anchor="middle">change the report, not the choice</text>
+</svg>

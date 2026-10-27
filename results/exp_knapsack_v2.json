@@ -1,0 +1,3967 @@
+{
+  "metadata": {
+    "started_utc": "2026-08-15T16:06:36.428522+00:00",
+    "finished_utc": "2026-08-15T16:09:31.407684+00:00",
+    "script_path": "experiments/supplementary/run_budget_allocation.py",
+    "script_sha256": "3481e4108f054dba19293466d53ac707d5b5da27f4e915f73f65f329d5067e8a",
+    "protocol_sha256": {
+      "experiments/protocols/supplementary_reruns.md": "c152cf15a557f9585c32c5dcc7e2d7235dcf3118685d12eaec399011255359ff"
+    },
+    "source_sha256": {
+      "data/raw/ec3_materials/readymix.jsonl": "44918250c5c9a3e52866064f3ea2cabe5d0ba7e839f4ec5240c88998685ac296",
+      "rnv/registry/normalize.py": "9afb36f46ee2d733c12d278046a0125ba5dc8b9de6836f7821ea024d6ed7b9e0",
+      "rnv/registry/features.py": "a02cf7a1c69804d3386b8efba7ae374c4a43f5489b65f944ea254f1e8188afd8",
+      "rnv/claims/certification.py": "d7fd59d5c3f2fa2c25973a5bddd8ab0d90f7e2dba3abb8b830ae764f93a45687",
+      "rnv/claims/conformal.py": "e52795afc2d02181a5a196dddd75b2d172980453bde794480c65511416c8ad99",
+      "rnv/claims/policies.py": "8b2467216352d6aae8a0646eefbf1216c6e58995eaf9b06c0f9dedd6aae7306d",
+      "rnv/evaluation/partitions.py": "824d3ceace194072f6b7c60be534191275aec6cb4425b316e39858cdc090e460",
+      "rnv/evaluation/model.py": "0dffdf0a2bfe75ca5470df7c283ccd8242fd0c51635b657efe19bee329d93f4d",
+      "rnv/evaluation/metrics.py": "636c17e5e4e813922dd6fdf176d15dbde887307ba428951006707365edf82537",
+      "rnv/evaluation/corpus.py": "db3a05473986b41efdf7568cd79a5f58e581dc5a289bd5e3add3f10041c32ac0",
+      "rnv/evaluation/bootstrap.py": "860d29779490bec3dd59496bc77e54b9fff9b7d05ee92c364e92616d9acd0f7b"
+    },
+    "n_records": 108326,
+    "n_manufacturers": 413,
+    "n_folds": 4,
+    "split_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "n_unique_partition_digests": 6,
+    "clf_role": "portfolio structure only (mass, baseline GWP, project grouping); never used for training or GWP ground truth",
+    "complete": true
+  },
+  "budget_summary": {
+    "1": {
+      "point": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 221291.92808789902,
+          "sd": 50568.228670657256,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.8288831652096,
+          "sd": 10.274007281555637,
+          "n": 24
+        }
+      },
+      "certified": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 220456.66856697956,
+          "sd": 49672.05757670004,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.570990515084818,
+          "sd": 10.10721380875461,
+          "n": 24
+        }
+      },
+      "mass": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 156680.09450788362,
+          "sd": 49904.525170419,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.577417167754836,
+          "sd": 9.5495148437547,
+          "n": 24
+        }
+      },
+      "oracle": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 267196.39147670876,
+          "sd": 36535.94818458923,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": -4.350774274795325,
+          "sd": 7.493933014324945,
+          "n": 24
+        }
+      }
+    },
+    "2": {
+      "point": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 320420.7954975163,
+          "sd": 66763.56863621104,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.873355318507235,
+          "sd": 9.976351735552836,
+          "n": 24
+        }
+      },
+      "certified": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 318405.1647900935,
+          "sd": 64669.13115110891,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.773138375555904,
+          "sd": 9.622596338780516,
+          "n": 24
+        }
+      },
+      "mass": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 235006.21976382667,
+          "sd": 66793.11907273758,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.962220460671995,
+          "sd": 9.20022834560368,
+          "n": 24
+        }
+      },
+      "oracle": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 378400.7507811105,
+          "sd": 52156.50642104668,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": -2.5995308907730936,
+          "sd": 7.705873419496693,
+          "n": 24
+        }
+      }
+    },
+    "3": {
+      "point": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 378897.2892766671,
+          "sd": 77532.22737584304,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.685944570448724,
+          "sd": 9.55606729087157,
+          "n": 24
+        }
+      },
+      "certified": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 375099.48471995996,
+          "sd": 77689.33793842584,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.660392485193016,
+          "sd": 9.466171698613241,
+          "n": 24
+        }
+      },
+      "mass": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 286847.50305461005,
+          "sd": 78995.73701521316,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.911297300740578,
+          "sd": 9.092893196470484,
+          "n": 24
+        }
+      },
+      "oracle": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 442984.68885337404,
+          "sd": 62826.40365096842,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": -1.8105535428340565,
+          "sd": 7.495418413536963,
+          "n": 24
+        }
+      }
+    },
+    "5": {
+      "point": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 434465.1448459041,
+          "sd": 94490.418674457,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.782032435413667,
+          "sd": 9.467326684176982,
+          "n": 24
+        }
+      },
+      "certified": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 428146.78376766876,
+          "sd": 95607.83280682392,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.801764452569342,
+          "sd": 9.381272863288263,
+          "n": 24
+        }
+      },
+      "mass": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 368267.55503656995,
+          "sd": 96000.83713018366,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 9.757710876721633,
+          "sd": 9.057424237341616,
+          "n": 24
+        }
+      },
+      "oracle": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 504861.5318519934,
+          "sd": 77232.64058262536,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 0.12663263382673193,
+          "sd": 7.528953434931423,
+          "n": 24
+        }
+      }
+    },
+    "10": {
+      "point": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 564646.5182538183,
+          "sd": 121118.60895278581,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 10.518543070177282,
+          "sd": 10.039683740718461,
+          "n": 24
+        }
+      },
+      "certified": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 560726.9002313851,
+          "sd": 121154.89826857265,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 10.341459997366185,
+          "sd": 9.871210005541862,
+          "n": 24
+        }
+      },
+      "mass": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 502789.1042095201,
+          "sd": 129238.1025288202,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 10.198825905591425,
+          "sd": 9.813450362029641,
+          "n": 24
+        }
+      },
+      "oracle": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 646489.064320946,
+          "sd": 101340.47669837238,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 0.8017331932636189,
+          "sd": 7.858057139799327,
+          "n": 24
+        }
+      }
+    },
+    "20": {
+      "point": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 712787.4074669617,
+          "sd": 152678.29997039703,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 10.393652574612277,
+          "sd": 10.171452582196144,
+          "n": 24
+        }
+      },
+      "certified": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 708204.9283704716,
+          "sd": 151283.24783184536,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 10.290153708744286,
+          "sd": 10.002703640761249,
+          "n": 24
+        }
+      },
+      "mass": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 631013.7893286204,
+          "sd": 163171.43642069073,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 10.311759805875274,
+          "sd": 9.986852268452656,
+          "n": 24
+        }
+      },
+      "oracle": {
+        "mean_realized_saving_kgco2e": {
+          "mean": 798650.2768394947,
+          "sd": 126055.12816432749,
+          "n": 24
+        },
+        "pooled_over_claim_pct": {
+          "mean": 2.1325298085384645,
+          "sd": 8.214871419804261,
+          "n": 24
+        }
+      }
+    }
+  },
+  "evaluations": [
+    {
+      "run_id": "seed0_fold0",
+      "status": "success",
+      "split_seed": 0,
+      "fold": 0,
+      "partition_sha256": "d4e7cf397fd863faaa580a8d459ec6c84c8281584843a466e5bc63f7595dd49b",
+      "n_train": 60185,
+      "n_calibration": 22209,
+      "n_test": 25932,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 104,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.39247034775624484,
+      "calibration_beta": 0.8126999692482162,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 202584.9718578805,
+            "pooled_over_claim_pct": 10.41053870781881,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 202411.6216818106,
+            "pooled_over_claim_pct": 10.440314773812943,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 143774.49918083058,
+            "pooled_over_claim_pct": 8.144882717421012,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 250526.68734477498,
+            "pooled_over_claim_pct": -3.900189492329107,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 304165.88871797576,
+            "pooled_over_claim_pct": 9.98096404093746,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 309893.4150562879,
+            "pooled_over_claim_pct": 9.096049919255208,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 199613.23710899882,
+            "pooled_over_claim_pct": 10.21444986969649,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 362091.5507655032,
+            "pooled_over_claim_pct": -3.189663878877204,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 370689.9061801744,
+            "pooled_over_claim_pct": 8.497920897289566,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 371358.3335521876,
+            "pooled_over_claim_pct": 8.451110588810254,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 265241.86673573166,
+            "pooled_over_claim_pct": 8.992969035273775,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 429275.43828920857,
+            "pooled_over_claim_pct": -2.86252414210842,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 412449.48455440387,
+            "pooled_over_claim_pct": 9.478537015157968,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 391163.35792352346,
+            "pooled_over_claim_pct": 10.852914206544115,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 324981.25340644957,
+            "pooled_over_claim_pct": 9.98700959716902,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 488293.03663446737,
+            "pooled_over_claim_pct": -1.9597835874971776,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 511633.41292416886,
+            "pooled_over_claim_pct": 11.62793775740076,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 511339.07574009243,
+            "pooled_over_claim_pct": 11.664143566468887,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 453993.1776727613,
+            "pooled_over_claim_pct": 11.033571921532978,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 613710.9535204463,
+            "pooled_over_claim_pct": -0.15891362479244964,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 679969.4301255196,
+            "pooled_over_claim_pct": 10.087594867716668,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 680077.2910262987,
+            "pooled_over_claim_pct": 10.066902754128066,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 609163.3805870567,
+            "pooled_over_claim_pct": 9.321545611719612,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 784177.3300854746,
+            "pooled_over_claim_pct": -0.3903804111806126,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed0_fold1",
+      "status": "success",
+      "split_seed": 0,
+      "fold": 1,
+      "partition_sha256": "d4e7cf397fd863faaa580a8d459ec6c84c8281584843a466e5bc63f7595dd49b",
+      "n_train": 56513,
+      "n_calibration": 29604,
+      "n_test": 22209,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 104,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.7862034234410697,
+      "calibration_beta": 0.6452574879980937,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 229198.64261737786,
+            "pooled_over_claim_pct": 4.109043060812923,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 228549.18607985863,
+            "pooled_over_claim_pct": 4.078752674677255,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 183193.31870220366,
+            "pooled_over_claim_pct": 1.6916656960791074,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 267431.98916634795,
+            "pooled_over_claim_pct": -7.761288577269167,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 330044.30663622246,
+            "pooled_over_claim_pct": 4.724405152029722,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 325189.7040609123,
+            "pooled_over_claim_pct": 4.875910209871671,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 258755.14458737665,
+            "pooled_over_claim_pct": 3.698622130029161,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 382766.19672350783,
+            "pooled_over_claim_pct": -6.579953827625934,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 387766.55829647474,
+            "pooled_over_claim_pct": 5.155020621468975,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 396597.8564159078,
+            "pooled_over_claim_pct": 3.664125342866999,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 312590.46970898774,
+            "pooled_over_claim_pct": 3.9241408275052403,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 452344.61697943736,
+            "pooled_over_claim_pct": -5.278042094441211,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 462119.9209918314,
+            "pooled_over_claim_pct": 3.8303737789817305,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 471665.74836035917,
+            "pooled_over_claim_pct": 2.8697476072505586,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 401072.78842480195,
+            "pooled_over_claim_pct": 3.9017321139760375,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 517418.1649058483,
+            "pooled_over_claim_pct": -4.290442992132275,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 587491.0115300685,
+            "pooled_over_claim_pct": 5.8382534652820866,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 599039.6962483006,
+            "pooled_over_claim_pct": 4.638776329745088,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 538336.5819040111,
+            "pooled_over_claim_pct": 4.963945132967335,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 653419.9251237763,
+            "pooled_over_claim_pct": -2.0440963780171453,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 766242.7304974473,
+            "pooled_over_claim_pct": 4.5779052767432855,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 762369.8952633303,
+            "pooled_over_claim_pct": 4.665431202442752,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 669390.9282662808,
+            "pooled_over_claim_pct": 5.514223147757183,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 814493.3106622711,
+            "pooled_over_claim_pct": -0.8042213045695049,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed0_fold2",
+      "status": "success",
+      "split_seed": 0,
+      "fold": 2,
+      "partition_sha256": "d4e7cf397fd863faaa580a8d459ec6c84c8281584843a466e5bc63f7595dd49b",
+      "n_train": 48141,
+      "n_calibration": 30581,
+      "n_test": 29604,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.03713473252466792,
+      "calibration_beta": 1.0065242532152525,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 175252.2977096489,
+            "pooled_over_claim_pct": 24.227982554951847,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 174771.59681942494,
+            "pooled_over_claim_pct": 23.904510402806796,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 89923.26189700716,
+            "pooled_over_claim_pct": 27.780698716475154,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 224839.8328175974,
+            "pooled_over_claim_pct": 9.210560612046342,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 238202.27238656022,
+            "pooled_over_claim_pct": 26.47578913383991,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 238044.3730003869,
+            "pooled_over_claim_pct": 25.987818852466148,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 135458.92073470922,
+            "pooled_over_claim_pct": 29.05152653175668,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 305788.69929826545,
+            "pooled_over_claim_pct": 12.867060109857594,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 263607.7495080382,
+            "pooled_over_claim_pct": 28.04895071434424,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 255192.1312408385,
+            "pooled_over_claim_pct": 27.98099469802867,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 166814.0528338609,
+            "pooled_over_claim_pct": 28.806681835773613,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 353704.7473504198,
+            "pooled_over_claim_pct": 13.458548932132048,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 287794.28874308296,
+            "pooled_over_claim_pct": 28.704727924016627,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 280583.03907392744,
+            "pooled_over_claim_pct": 28.76662839494028,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 224066.9029292596,
+            "pooled_over_claim_pct": 28.768689075930293,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 396984.4062818761,
+            "pooled_over_claim_pct": 15.89376602668447,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 416383.20071923523,
+            "pooled_over_claim_pct": 28.070028628828556,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 405368.0516823936,
+            "pooled_over_claim_pct": 28.35707309776072,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 339610.1225683407,
+            "pooled_over_claim_pct": 28.77269251457547,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 525462.7523443144,
+            "pooled_over_claim_pct": 16.15171748933152,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 521984.07119632215,
+            "pooled_over_claim_pct": 28.80724588930772,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 505422.8742944885,
+            "pooled_over_claim_pct": 28.902378854262455,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 418000.6526173094,
+            "pooled_over_claim_pct": 29.408359413777596,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 640496.7381468444,
+            "pooled_over_claim_pct": 19.62700827675456,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed0_fold3",
+      "status": "success",
+      "split_seed": 0,
+      "fold": 3,
+      "partition_sha256": "d4e7cf397fd863faaa580a8d459ec6c84c8281584843a466e5bc63f7595dd49b",
+      "n_train": 51813,
+      "n_calibration": 25932,
+      "n_test": 30581,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.5028316330770338,
+      "calibration_beta": 0.7513342260989404,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 166814.20067258494,
+            "pooled_over_claim_pct": 14.691338524397018,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 169324.63438964917,
+            "pooled_over_claim_pct": 14.244685226715127,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 102462.65993236136,
+            "pooled_over_claim_pct": 12.458147298469934,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 250470.05365403992,
+            "pooled_over_claim_pct": -7.872166057558818,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 256244.00159054057,
+            "pooled_over_claim_pct": 13.463655652153982,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 262321.55651650735,
+            "pooled_over_claim_pct": 12.386264572163299,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 177408.0479365187,
+            "pooled_over_claim_pct": 10.64954479819366,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 353857.54313674604,
+            "pooled_over_claim_pct": -3.106924245422972,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 318040.8873240022,
+            "pooled_over_claim_pct": 11.936482004364304,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 317067.6362211997,
+            "pooled_over_claim_pct": 11.92736700748123,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 228254.76129294353,
+            "pooled_over_claim_pct": 10.528178259009575,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 411658.33275272005,
+            "pooled_over_claim_pct": -2.322143599641686,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 366000.5562687369,
+            "pooled_over_claim_pct": 11.305130348106632,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 367619.859712617,
+            "pooled_over_claim_pct": 11.157418788163136,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 298141.526761302,
+            "pooled_over_claim_pct": 10.450776977443576,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 457523.92510041984,
+            "pooled_over_claim_pct": -1.303350711948352,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 446955.88022103714,
+            "pooled_over_claim_pct": 14.954297989645791,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 446895.28455958137,
+            "pooled_over_claim_pct": 14.927079390699099,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 370712.0377079082,
+            "pooled_over_claim_pct": 13.823666392182046,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 565416.9301032937,
+            "pooled_over_claim_pct": 0.2585211782674011,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 546512.277321819,
+            "pooled_over_claim_pct": 15.850657288047168,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 547031.1778036918,
+            "pooled_over_claim_pct": 14.660341460681803,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 446247.7777965119,
+            "pooled_over_claim_pct": 15.074570210661134,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 682137.5569532887,
+            "pooled_over_claim_pct": 1.8595158101024756,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed1_fold0",
+      "status": "success",
+      "split_seed": 1,
+      "fold": 0,
+      "partition_sha256": "346c295337578673d129e34cc0b8e3d4410ab2aa248f0f285787dffa7a6f0d8d",
+      "n_train": 54270,
+      "n_calibration": 30420,
+      "n_test": 23636,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.5169278750348082,
+      "calibration_beta": 0.770105099795584,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 285615.96980394906,
+            "pooled_over_claim_pct": -4.5145179595528395,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 288147.67377462727,
+            "pooled_over_claim_pct": -4.976684725117059,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 232592.93979512504,
+            "pooled_over_claim_pct": -4.426250386862287,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 311437.4838704988,
+            "pooled_over_claim_pct": -12.640174436653972,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 416322.38322570134,
+            "pooled_over_claim_pct": -4.418776288150089,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 411934.6972322731,
+            "pooled_over_claim_pct": -3.858112942581159,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 326084.7088413112,
+            "pooled_over_claim_pct": -2.8182087413965564,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 445135.4329819204,
+            "pooled_over_claim_pct": -11.467292507654172,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 471979.75936406717,
+            "pooled_over_claim_pct": -2.235512003292179,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 483679.8075042909,
+            "pooled_over_claim_pct": -3.3662954372548737,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 395413.9934785211,
+            "pooled_over_claim_pct": -2.7861705604458726,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 522407.9159933516,
+            "pooled_over_claim_pct": -9.67761318582564,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 547588.0149055851,
+            "pooled_over_claim_pct": -2.2124036423251487,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 557551.267322095,
+            "pooled_over_claim_pct": -2.985038185509299,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 496630.8417929116,
+            "pooled_over_claim_pct": -2.491196526266822,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 598018.2248042339,
+            "pooled_over_claim_pct": -8.365355653144825,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 690545.6095329062,
+            "pooled_over_claim_pct": -1.0842645372537731,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 703236.2484653882,
+            "pooled_over_claim_pct": -1.9399269585581413,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 657080.1676163512,
+            "pooled_over_claim_pct": -2.0943756788571286,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 739715.0917464491,
+            "pooled_over_claim_pct": -6.77185332956228,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 898649.3958966697,
+            "pooled_over_claim_pct": -2.5863610355873803,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 881706.0001552069,
+            "pooled_over_claim_pct": -1.8057314577099897,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 842568.9316296821,
+            "pooled_over_claim_pct": -2.5053959579168956,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 930783.3035899247,
+            "pooled_over_claim_pct": -5.832269016160073,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed1_fold1",
+      "status": "success",
+      "split_seed": 1,
+      "fold": 1,
+      "partition_sha256": "346c295337578673d129e34cc0b8e3d4410ab2aa248f0f285787dffa7a6f0d8d",
+      "n_train": 48702,
+      "n_calibration": 29204,
+      "n_test": 30420,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 104,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.3570200655974151,
+      "calibration_beta": 0.8491819054564976,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 230786.91654763801,
+            "pooled_over_claim_pct": 1.9818167568770821,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 233276.0592641,
+            "pooled_over_claim_pct": 1.0603456054641327,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 172507.78586455205,
+            "pooled_over_claim_pct": 1.3832470829987036,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 267661.3494031336,
+            "pooled_over_claim_pct": -8.26849547450843,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 343737.0138250618,
+            "pooled_over_claim_pct": 1.3258020388343972,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 342821.48103033676,
+            "pooled_over_claim_pct": 1.3096713581643402,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 277827.417326795,
+            "pooled_over_claim_pct": 0.6194124202692407,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 379891.4209173755,
+            "pooled_over_claim_pct": -7.633791572245722,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 401838.6400618376,
+            "pooled_over_claim_pct": 2.0122903522547277,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 401625.1670826001,
+            "pooled_over_claim_pct": 1.8835399771741734,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 333068.7090534186,
+            "pooled_over_claim_pct": 1.115932434438659,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 442233.4689451722,
+            "pooled_over_claim_pct": -7.309313127600698,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 465293.8020636665,
+            "pooled_over_claim_pct": 2.0488774787938566,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 465469.4942666595,
+            "pooled_over_claim_pct": 1.9265217407658002,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 418556.70238151535,
+            "pooled_over_claim_pct": 0.8866143400483921,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 510114.56801511283,
+            "pooled_over_claim_pct": -4.277848677525841,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 624599.0359890977,
+            "pooled_over_claim_pct": 1.5724127428210648,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 621276.1455509478,
+            "pooled_over_claim_pct": 1.6858904001977537,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 559979.2436813922,
+            "pooled_over_claim_pct": 1.2334182977169985,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 669615.0030032615,
+            "pooled_over_claim_pct": -4.826264097886907,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 769404.3251462257,
+            "pooled_over_claim_pct": 1.9085566014166773,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 768182.9525822386,
+            "pooled_over_claim_pct": 1.613606947547159,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 692284.5895724049,
+            "pooled_over_claim_pct": 1.4210548439039525,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 823391.6970654263,
+            "pooled_over_claim_pct": -3.7608451393005,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed1_fold2",
+      "status": "success",
+      "split_seed": 1,
+      "fold": 2,
+      "partition_sha256": "346c295337578673d129e34cc0b8e3d4410ab2aa248f0f285787dffa7a6f0d8d",
+      "n_train": 54056,
+      "n_calibration": 25066,
+      "n_test": 29204,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 104,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -1.5288377863024432,
+      "calibration_beta": 0.2683394519945773,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 177345.05053090365,
+            "pooled_over_claim_pct": 28.657000030693528,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 165859.55030634732,
+            "pooled_over_claim_pct": 29.94477197525232,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 119355.62746483138,
+            "pooled_over_claim_pct": 26.30677073291945,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 252939.939986189,
+            "pooled_over_claim_pct": 7.315513336046847,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 257886.5008806372,
+            "pooled_over_claim_pct": 27.717972247853584,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 258521.77546019715,
+            "pooled_over_claim_pct": 27.590689147143543,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 191728.18623389106,
+            "pooled_over_claim_pct": 25.15948566857102,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 354899.62103003205,
+            "pooled_over_claim_pct": 7.8705920797068165,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 310630.9067875561,
+            "pooled_over_claim_pct": 25.443434949726836,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 318460.9764650073,
+            "pooled_over_claim_pct": 24.971679955374334,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 243450.03020941102,
+            "pooled_over_claim_pct": 24.334641859991194,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 413809.14127978095,
+            "pooled_over_claim_pct": 8.034618322073106,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 365142.43587282806,
+            "pooled_over_claim_pct": 24.569859305270466,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 364124.8133708978,
+            "pooled_over_claim_pct": 24.673499403914708,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 310336.40629405266,
+            "pooled_over_claim_pct": 24.33093094865296,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 465073.3025743433,
+            "pooled_over_claim_pct": 9.821535221668778,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 473786.2998704481,
+            "pooled_over_claim_pct": 25.88473613943933,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 470269.0900728714,
+            "pooled_over_claim_pct": 26.11987562381778,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 421829.2853746301,
+            "pooled_over_claim_pct": 24.979333993257534,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 585483.607558585,
+            "pooled_over_claim_pct": 10.217471452896174,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 594336.234890398,
+            "pooled_over_claim_pct": 26.092294089147074,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 598074.650198408,
+            "pooled_over_claim_pct": 26.00773817028754,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 509200.3463844095,
+            "pooled_over_claim_pct": 25.854102295355347,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 711569.2860624938,
+            "pooled_over_claim_pct": 12.230210243650177,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed1_fold3",
+      "status": "success",
+      "split_seed": 1,
+      "fold": 3,
+      "partition_sha256": "346c295337578673d129e34cc0b8e3d4410ab2aa248f0f285787dffa7a6f0d8d",
+      "n_train": 59624,
+      "n_calibration": 23636,
+      "n_test": 25066,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.8759864577453361,
+      "calibration_beta": 0.5870377331805072,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 285279.5312287858,
+            "pooled_over_claim_pct": 3.3268636945507755,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 275449.17996612325,
+            "pooled_over_claim_pct": 4.7832585827808956,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 184936.30395976317,
+            "pooled_over_claim_pct": 9.543157357674128,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 320050.9115499984,
+            "pooled_over_claim_pct": -10.210286881398037,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 376515.1042322461,
+            "pooled_over_claim_pct": 7.722546320224462,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 362787.7626932237,
+            "pooled_over_claim_pct": 9.182742867901728,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 269542.14759266505,
+            "pooled_over_claim_pct": 11.468746630748734,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 442166.33331024274,
+            "pooled_over_claim_pct": -5.934471151283846,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 440890.10176406323,
+            "pooled_over_claim_pct": 8.359365423497326,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 426272.56320827745,
+            "pooled_over_claim_pct": 9.132615769536782,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 310683.4066418213,
+            "pooled_over_claim_pct": 12.674587703111513,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 517671.584847159,
+            "pooled_over_claim_pct": -5.641278250305886,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 520746.6181898182,
+            "pooled_over_claim_pct": 7.767335260278283,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 477864.03271651495,
+            "pooled_over_claim_pct": 10.515905720970716,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 415557.50110322074,
+            "pooled_over_claim_pct": 11.538388986709725,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 588175.3432006649,
+            "pooled_over_claim_pct": -2.9452797989103945,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 636094.7154658268,
+            "pooled_over_claim_pct": 10.76634661787029,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 631625.1071097255,
+            "pooled_over_claim_pct": 10.995981981370022,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 579734.335870371,
+            "pooled_over_claim_pct": 11.093018911388135,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 754806.7896536521,
+            "pooled_over_claim_pct": -3.305262936081861,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 778010.3803581381,
+            "pooled_over_claim_pct": 11.980352576768654,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 777504.0907198157,
+            "pooled_over_claim_pct": 11.899179773335955,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 709461.9208126226,
+            "pooled_over_claim_pct": 11.846551692508946,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 909651.2986990968,
+            "pooled_over_claim_pct": -1.5089261646287397,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed2_fold0",
+      "status": "success",
+      "split_seed": 2,
+      "fold": 0,
+      "partition_sha256": "208b2872f36245d006595b1b2738fa9ef3cf4477ccd9e36c01806902774adef2",
+      "n_train": 51512,
+      "n_calibration": 23114,
+      "n_test": 33700,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 104,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.4062241989157745,
+      "calibration_beta": 0.8060541537828423,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 273723.80645897024,
+            "pooled_over_claim_pct": -0.385761753851694,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 271897.4341081508,
+            "pooled_over_claim_pct": -0.09903431053142074,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 205096.33349950047,
+            "pooled_over_claim_pct": 1.2256371477351484,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 293673.2189395177,
+            "pooled_over_claim_pct": -8.683263872949333,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 382008.99240815523,
+            "pooled_over_claim_pct": 0.6219650077444843,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 375676.00380279636,
+            "pooled_over_claim_pct": 1.248936815457501,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 271030.8936389708,
+            "pooled_over_claim_pct": 3.6428072250015044,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 408143.8674876457,
+            "pooled_over_claim_pct": -7.045369291500567,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 436570.58040466584,
+            "pooled_over_claim_pct": 1.9253115351425303,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 435176.1460318586,
+            "pooled_over_claim_pct": 1.8322844205313809,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 315250.8441319968,
+            "pooled_over_claim_pct": 4.672863279981808,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 471545.10531918233,
+            "pooled_over_claim_pct": -5.5800510544706325,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 498832.60600798385,
+            "pooled_over_claim_pct": 2.3733329944380133,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 500607.05506148917,
+            "pooled_over_claim_pct": 2.0516374739713767,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 410254.16586325126,
+            "pooled_over_claim_pct": 4.012706290380429,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 536804.7104797007,
+            "pooled_over_claim_pct": -2.986519903969841,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 633544.5825639039,
+            "pooled_over_claim_pct": 2.7055003503909627,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 634307.139343215,
+            "pooled_over_claim_pct": 2.496267188715625,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 540320.9921797143,
+            "pooled_over_claim_pct": 4.063949917295171,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 678798.0542574117,
+            "pooled_over_claim_pct": -3.394236039679221,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 796621.0688206289,
+            "pooled_over_claim_pct": 2.305761024422254,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 793557.7716860275,
+            "pooled_over_claim_pct": 2.440897398871479,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 678715.5815253431,
+            "pooled_over_claim_pct": 3.8979644716584265,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 837567.0475036134,
+            "pooled_over_claim_pct": -2.4772491026206973,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed2_fold1",
+      "status": "success",
+      "split_seed": 2,
+      "fold": 1,
+      "partition_sha256": "208b2872f36245d006595b1b2738fa9ef3cf4477ccd9e36c01806902774adef2",
+      "n_train": 56451,
+      "n_calibration": 28761,
+      "n_test": 23114,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -1.5899139640447937,
+      "calibration_beta": 0.237100876661882,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 198935.13816497897,
+            "pooled_over_claim_pct": 17.970786931813112,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 195991.1956466309,
+            "pooled_over_claim_pct": 17.02487723367707,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 113054.90493746796,
+            "pooled_over_claim_pct": 20.013387017250064,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 229718.26894644025,
+            "pooled_over_claim_pct": 8.683481170206443,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 264412.10359623446,
+            "pooled_over_claim_pct": 20.36048904260807,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 272861.01811195986,
+            "pooled_over_claim_pct": 18.42375711298094,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 155305.84875707317,
+            "pooled_over_claim_pct": 21.38943372772316,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 323578.8028420769,
+            "pooled_over_claim_pct": 9.390563995964467,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 312142.12098493375,
+            "pooled_over_claim_pct": 19.75517897528604,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 301285.8756876705,
+            "pooled_over_claim_pct": 19.278507843047812,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 188990.05379488034,
+            "pooled_over_claim_pct": 21.274820849394597,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 372997.8535453399,
+            "pooled_over_claim_pct": 9.364138194539398,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 343058.4910460543,
+            "pooled_over_claim_pct": 20.369488447574263,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 317163.7645509418,
+            "pooled_over_claim_pct": 20.90187848172132,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 262842.07588230225,
+            "pooled_over_claim_pct": 19.815722012973733,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 416578.5441703585,
+            "pooled_over_claim_pct": 10.55990976822781,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 396810.46524031146,
+            "pooled_over_claim_pct": 24.60472911110438,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 384106.9658782046,
+            "pooled_over_claim_pct": 23.846854477115116,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 328716.0349139989,
+            "pooled_over_claim_pct": 22.77268114309649,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 503250.8885422178,
+            "pooled_over_claim_pct": 13.966492047011815,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 516119.366549023,
+            "pooled_over_claim_pct": 22.840142442406474,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 514638.30073857703,
+            "pooled_over_claim_pct": 22.703819762710193,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 448705.9133230524,
+            "pooled_over_claim_pct": 21.42953734167349,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 639668.1586088258,
+            "pooled_over_claim_pct": 14.118100781245959,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed2_fold2",
+      "status": "success",
+      "split_seed": 2,
+      "fold": 2,
+      "partition_sha256": "208b2872f36245d006595b1b2738fa9ef3cf4477ccd9e36c01806902774adef2",
+      "n_train": 56814,
+      "n_calibration": 22751,
+      "n_test": 28761,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -1.06001529449679,
+      "calibration_beta": 0.5176001664923057,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 213420.59480387636,
+            "pooled_over_claim_pct": 15.371196199956993,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 206178.20809784517,
+            "pooled_over_claim_pct": 15.419350121728753,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 168501.61133106673,
+            "pooled_over_claim_pct": 9.752626739372484,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 247100.67020008835,
+            "pooled_over_claim_pct": 0.5012640302501155,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 294853.74451082235,
+            "pooled_over_claim_pct": 16.60929986826453,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 290369.6270583471,
+            "pooled_over_claim_pct": 15.824534521064626,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 235293.67276470663,
+            "pooled_over_claim_pct": 12.499367463700825,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 345906.5163273396,
+            "pooled_over_claim_pct": 3.8139094086624348,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 349164.0407551619,
+            "pooled_over_claim_pct": 15.87508558359993,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 347666.93916628376,
+            "pooled_over_claim_pct": 15.039392824097556,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 283238.20135578,
+            "pooled_over_claim_pct": 12.389844125845837,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 406477.4571786872,
+            "pooled_over_claim_pct": 4.763308797297484,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 393037.7261767568,
+            "pooled_over_claim_pct": 15.829328390896569,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 399447.7546174211,
+            "pooled_over_claim_pct": 13.905266686764474,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 351671.45694953064,
+            "pooled_over_claim_pct": 12.70899013488336,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 454499.20634500793,
+            "pooled_over_claim_pct": 6.5576171643526315,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 518222.64212238597,
+            "pooled_over_claim_pct": 15.866395221944304,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 528280.7915196652,
+            "pooled_over_claim_pct": 14.008493706769087,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 479617.14110703795,
+            "pooled_over_claim_pct": 13.008922757525234,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 592080.2483863562,
+            "pooled_over_claim_pct": 6.544881714000583,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 634736.1762310613,
+            "pooled_over_claim_pct": 16.768719934006896,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 650482.2472088271,
+            "pooled_over_claim_pct": 14.755120569257546,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 571329.203695628,
+            "pooled_over_claim_pct": 14.371421189494232,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 713090.453339244,
+            "pooled_over_claim_pct": 8.393467058091408,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed2_fold3",
+      "status": "success",
+      "split_seed": 2,
+      "fold": 3,
+      "partition_sha256": "208b2872f36245d006595b1b2738fa9ef3cf4477ccd9e36c01806902774adef2",
+      "n_train": 51875,
+      "n_calibration": 33700,
+      "n_test": 22751,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 104,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.6959281664575591,
+      "calibration_beta": 0.6761707074223807,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 237668.42365554904,
+            "pooled_over_claim_pct": 1.5935663721215783,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 243620.58233074594,
+            "pooled_over_claim_pct": 0.3678104615066175,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 190030.73817122122,
+            "pooled_over_claim_pct": 0.22032699819132917,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 269566.52810773917,
+            "pooled_over_claim_pct": -10.19771034716907,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 365680.06467104267,
+            "pooled_over_claim_pct": -0.7001094362061044,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 364036.4116304793,
+            "pooled_over_claim_pct": -0.5964988578086675,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 283390.4681898645,
+            "pooled_over_claim_pct": 0.28236225354883937,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 386189.62326957897,
+            "pooled_over_claim_pct": -9.005105433851075,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 429965.5384644702,
+            "pooled_over_claim_pct": -0.4499164728013271,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 430058.18788461154,
+            "pooled_over_claim_pct": -0.5585680182562969,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 339083.278575396,
+            "pooled_over_claim_pct": 0.46202441043211023,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 454700.30460602854,
+            "pooled_over_claim_pct": -8.735517461566607,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 487934.928278847,
+            "pooled_over_claim_pct": 0.3431863526448864,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 487086.5807702739,
+            "pooled_over_claim_pct": 0.19851284178633916,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 433745.0049447222,
+            "pooled_over_claim_pct": 0.3848330526331459,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 529141.5959596633,
+            "pooled_over_claim_pct": -5.573398233617511,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 652940.8482040861,
+            "pooled_over_claim_pct": -0.34763400646225134,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 656162.1382049076,
+            "pooled_over_claim_pct": -0.7451909354410943,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 606536.4805416435,
+            "pooled_over_claim_pct": -0.7002281160397968,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 702459.2185430116,
+            "pooled_over_claim_pct": -7.1633628936881815,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 821107.5984795383,
+            "pooled_over_claim_pct": -0.5615639018978249,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 820683.7442961428,
+            "pooled_over_claim_pct": -0.598217151758808,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 758030.2418274477,
+            "pooled_over_claim_pct": -0.6835228431405658,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 870003.1474124244,
+            "pooled_over_claim_pct": -5.6663540651278845,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed3_fold0",
+      "status": "success",
+      "split_seed": 3,
+      "fold": 0,
+      "partition_sha256": "dd32033c8f5d81f50fb8560112f27f62e31a95a72073762873620805fd8400c5",
+      "n_train": 54559,
+      "n_calibration": 31981,
+      "n_test": 21786,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.5593761888577669,
+      "calibration_beta": 0.7337388632738463,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 200287.44442513006,
+            "pooled_over_claim_pct": 10.638697512227482,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 197492.554689479,
+            "pooled_over_claim_pct": 10.664957479168903,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 141561.44678238203,
+            "pooled_over_claim_pct": 8.651637647523891,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 269749.82046718296,
+            "pooled_over_claim_pct": -6.6499326932923,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 319882.17217615363,
+            "pooled_over_claim_pct": 7.075030087355627,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 320673.98084243055,
+            "pooled_over_claim_pct": 6.959697950700182,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 225399.25336740253,
+            "pooled_over_claim_pct": 8.204466092734574,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 397465.9329210681,
+            "pooled_over_claim_pct": -6.413789857296735,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 384628.7192123049,
+            "pooled_over_claim_pct": 6.768943258422799,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 384955.9789063101,
+            "pooled_over_claim_pct": 6.465234863175604,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 276556.9160032692,
+            "pooled_over_claim_pct": 7.844939246356144,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 467170.9430176335,
+            "pooled_over_claim_pct": -5.80270710132959,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 426212.633010479,
+            "pooled_over_claim_pct": 7.696855938283293,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 433542.0982311064,
+            "pooled_over_claim_pct": 7.013495664106905,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 365437.50941993465,
+            "pooled_over_claim_pct": 7.277100995155595,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 527765.4267432339,
+            "pooled_over_claim_pct": -3.1414090973437263,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 549582.6688036835,
+            "pooled_over_claim_pct": 9.947286519966244,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 545952.1286559876,
+            "pooled_over_claim_pct": 9.952906287814141,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 501667.3484450104,
+            "pooled_over_claim_pct": 9.05307812844168,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 661872.579936281,
+            "pooled_over_claim_pct": -0.36764073594426044,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 715216.0878504097,
+            "pooled_over_claim_pct": 9.273566380250829,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 714200.7127336205,
+            "pooled_over_claim_pct": 9.257355065499967,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 646417.5593131369,
+            "pooled_over_claim_pct": 8.874993831430992,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 843287.3867528008,
+            "pooled_over_claim_pct": -0.3068619753187568,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed3_fold1",
+      "status": "success",
+      "split_seed": 3,
+      "fold": 1,
+      "partition_sha256": "dd32033c8f5d81f50fb8560112f27f62e31a95a72073762873620805fd8400c5",
+      "n_train": 44966,
+      "n_calibration": 31379,
+      "n_test": 31981,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 104,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.6600149835649156,
+      "calibration_beta": 0.6977671130161548,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 147113.69633431282,
+            "pooled_over_claim_pct": 28.6344032315419,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 152032.7208993332,
+            "pooled_over_claim_pct": 27.746683042703527,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 84048.59203209945,
+            "pooled_over_claim_pct": 28.994496105063522,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 209294.5770423026,
+            "pooled_over_claim_pct": 11.705541760817486,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 223858.0778889095,
+            "pooled_over_claim_pct": 27.895296513933094,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 226404.85653890177,
+            "pooled_over_claim_pct": 27.428302333533157,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 159584.91837647,
+            "pooled_over_claim_pct": 26.143428409260867,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 301528.8941510319,
+            "pooled_over_claim_pct": 13.400527889625211,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 266864.60043494724,
+            "pooled_over_claim_pct": 27.120182128131813,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 267349.1489234097,
+            "pooled_over_claim_pct": 26.634534991294434,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 197047.2303000356,
+            "pooled_over_claim_pct": 26.023892042739966,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 352484.98704127775,
+            "pooled_over_claim_pct": 13.800524889588146,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 318002.15634868416,
+            "pooled_over_claim_pct": 26.136321510216096,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 319804.7471967051,
+            "pooled_over_claim_pct": 25.290321736654274,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 272527.45875197457,
+            "pooled_over_claim_pct": 24.811155257536715,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 396962.45088316815,
+            "pooled_over_claim_pct": 16.638894464925702,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 441549.96953787707,
+            "pooled_over_claim_pct": 25.71910691045626,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 439867.5108809917,
+            "pooled_over_claim_pct": 25.222277788077495,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 386511.6683411727,
+            "pooled_over_claim_pct": 24.87132161165948,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 533376.4592094758,
+            "pooled_over_claim_pct": 15.771657885373259,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 566350.4173284305,
+            "pooled_over_claim_pct": 25.148430096263496,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 551756.7854654314,
+            "pooled_over_claim_pct": 25.49850901649136,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 483666.13534217986,
+            "pooled_over_claim_pct": 25.060104940029532,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 652159.3407563379,
+            "pooled_over_claim_pct": 18.590302584885876,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed3_fold2",
+      "status": "success",
+      "split_seed": 3,
+      "fold": 2,
+      "partition_sha256": "dd32033c8f5d81f50fb8560112f27f62e31a95a72073762873620805fd8400c5",
+      "n_train": 53767,
+      "n_calibration": 23180,
+      "n_test": 31379,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 104,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -1.0984214315185568,
+      "calibration_beta": 0.4933752157104381,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 312476.943317803,
+            "pooled_over_claim_pct": -6.898302178007743,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 306214.643385557,
+            "pooled_over_claim_pct": -5.624362668664863,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 249791.89390267894,
+            "pooled_over_claim_pct": -4.586801397563715,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 331208.5466152325,
+            "pooled_over_claim_pct": -13.663446187321354,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 447737.67337672814,
+            "pooled_over_claim_pct": -6.459069806849616,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 447718.98669730074,
+            "pooled_over_claim_pct": -6.543579939088776,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 364404.1889628569,
+            "pooled_over_claim_pct": -4.608991296372245,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 478155.13781443634,
+            "pooled_over_claim_pct": -13.071170201666236,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 527140.6014997093,
+            "pooled_over_claim_pct": -6.345324480634665,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 525042.6956957232,
+            "pooled_over_claim_pct": -6.113161699513797,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 444775.5262095588,
+            "pooled_over_claim_pct": -4.640006218837784,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 561514.4405160539,
+            "pooled_over_claim_pct": -12.40647165182448,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 610197.542850409,
+            "pooled_over_claim_pct": -5.402063915785442,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 602858.9419466724,
+            "pooled_over_claim_pct": -4.9850542464743715,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 552570.2239249394,
+            "pooled_over_claim_pct": -4.726506251639849,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 645157.6715880437,
+            "pooled_over_claim_pct": -10.05989238924908,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 760846.1372722981,
+            "pooled_over_claim_pct": -4.433069267568912,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 743076.0967927219,
+            "pooled_over_claim_pct": -3.4470124328657388,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 711772.4162543399,
+            "pooled_over_claim_pct": -3.876794375762107,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 796490.4289014223,
+            "pooled_over_claim_pct": -9.132830133327905,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 948882.2243598733,
+            "pooled_over_claim_pct": -4.335930050516587,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 929359.1179149501,
+            "pooled_over_claim_pct": -3.424574181161302,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 879497.2076112581,
+            "pooled_over_claim_pct": -3.6037090354542736,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 978979.2978502383,
+            "pooled_over_claim_pct": -7.890738112925627,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed3_fold3",
+      "status": "success",
+      "split_seed": 3,
+      "fold": 3,
+      "partition_sha256": "dd32033c8f5d81f50fb8560112f27f62e31a95a72073762873620805fd8400c5",
+      "n_train": 63360,
+      "n_calibration": 21786,
+      "n_test": 23180,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.11467868924102721,
+      "calibration_beta": 0.9585406701397214,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 157233.3362099303,
+            "pooled_over_claim_pct": 13.661364465148614,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 164055.18822647506,
+            "pooled_over_claim_pct": 12.004266198461615,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 91948.0254066385,
+            "pooled_over_claim_pct": 11.216053716760236,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 241377.56768583885,
+            "pooled_over_claim_pct": -9.5449606575442,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 272113.8457347767,
+            "pooled_over_claim_pct": 8.638683140581376,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 270186.9727364183,
+            "pooled_over_claim_pct": 8.602528610196241,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 157321.45597076797,
+            "pooled_over_claim_pct": 10.163543883783227,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 340088.53054761246,
+            "pooled_over_claim_pct": -6.5110256571262095,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 328259.34276552504,
+            "pooled_over_claim_pct": 7.939709625994716,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 323941.91640605236,
+            "pooled_over_claim_pct": 8.220086710937531,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 202898.9698962304,
+            "pooled_over_claim_pct": 10.009812119338113,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 399650.2146273391,
+            "pooled_over_claim_pct": -4.927161562817507,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 372733.2418466154,
+            "pooled_over_claim_pct": 7.956783047214396,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 344392.228907255,
+            "pooled_over_claim_pct": 9.371789186646904,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 267937.2979212927,
+            "pooled_over_claim_pct": 9.876659488480264,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 456628.03278783784,
+            "pooled_over_claim_pct": -3.1765686039778624,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 525387.2679759107,
+            "pooled_over_claim_pct": 6.5408253478084495,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 488799.9651442002,
+            "pooled_over_claim_pct": 8.272509691161462,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 418792.45064824895,
+            "pooled_over_claim_pct": 8.602580276509501,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 597832.3714157683,
+            "pooled_over_claim_pct": -2.151213046201742,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 616468.3928213831,
+            "pooled_over_claim_pct": 9.049817899620459,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 616271.1404633058,
+            "pooled_over_claim_pct": 8.984523718314586,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 523159.1100024857,
+            "pooled_over_claim_pct": 9.124175652339352,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 732037.1234337181,
+            "pooled_over_claim_pct": -0.6999002575302489,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed4_fold0",
+      "status": "success",
+      "split_seed": 4,
+      "fold": 0,
+      "partition_sha256": "c75420e0b6a519c5c749a74148d14dc68f21e2c239aedf1cc8a95e81525ff4db",
+      "n_train": 45320,
+      "n_calibration": 32107,
+      "n_test": 30899,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 104,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.60913595154538,
+      "calibration_beta": 0.7026691307154436,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 268745.9480990457,
+            "pooled_over_claim_pct": 0.523610091556701,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 268146.66977907246,
+            "pooled_over_claim_pct": 0.606813251062839,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 186799.0806646516,
+            "pooled_over_claim_pct": 3.7621567315534676,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 304833.00008316233,
+            "pooled_over_claim_pct": -9.8147181228029,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 367121.6250326341,
+            "pooled_over_claim_pct": 2.62050196643918,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 353287.77943948633,
+            "pooled_over_claim_pct": 4.162360392497092,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 290638.102293553,
+            "pooled_over_claim_pct": 3.1250238280197253,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 424504.3430186965,
+            "pooled_over_claim_pct": -9.185576640105133,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 447087.67201242584,
+            "pooled_over_claim_pct": 1.6586768209945928,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 429621.43709862215,
+            "pooled_over_claim_pct": 3.178443168850968,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 362289.3279943714,
+            "pooled_over_claim_pct": 2.7062997310741634,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 500894.01835848787,
+            "pooled_over_claim_pct": -7.666465416935926,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 532634.8898464204,
+            "pooled_over_claim_pct": 0.6340443674447527,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 512394.6787148551,
+            "pooled_over_claim_pct": 2.0899852338423095,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 465596.5159808082,
+            "pooled_over_claim_pct": 1.9266292869344004,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 581179.4297725519,
+            "pooled_over_claim_pct": -5.9395216981141665,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 687151.2907461675,
+            "pooled_over_claim_pct": 0.7377407583379963,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 687955.8426094046,
+            "pooled_over_claim_pct": 0.6359436630807788,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 632520.0639932483,
+            "pooled_over_claim_pct": 0.881707179876749,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 749881.4744354418,
+            "pooled_over_claim_pct": -6.304019044405328,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 866205.317082758,
+            "pooled_over_claim_pct": 0.2041398333622854,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 865964.2253640306,
+            "pooled_over_claim_pct": 0.1687930456832297,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 800817.6892694234,
+            "pooled_over_claim_pct": 0.2706620462231224,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 922711.0342979732,
+            "pooled_over_claim_pct": -5.489442497797559,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed4_fold1",
+      "status": "success",
+      "split_seed": 4,
+      "fold": 1,
+      "partition_sha256": "c75420e0b6a519c5c749a74148d14dc68f21e2c239aedf1cc8a95e81525ff4db",
+      "n_train": 54516,
+      "n_calibration": 21703,
+      "n_test": 32107,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.8870578910598411,
+      "calibration_beta": 0.5957024340114443,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 174289.66377807027,
+            "pooled_over_claim_pct": 21.193919665652242,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 171443.23727447836,
+            "pooled_over_claim_pct": 20.579481750676866,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 127021.36711140085,
+            "pooled_over_claim_pct": 17.52497801461368,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 222621.81258342587,
+            "pooled_over_claim_pct": 1.7308367542790994,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 256935.93174949047,
+            "pooled_over_claim_pct": 19.956415543454654,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 252558.10321871322,
+            "pooled_over_claim_pct": 20.154355372730773,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 169032.7629404425,
+            "pooled_over_claim_pct": 20.20935214224252,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 314781.6877985797,
+            "pooled_over_claim_pct": 5.809275846752531,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 293521.07061072445,
+            "pooled_over_claim_pct": 20.40693811647749,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 288171.8546623172,
+            "pooled_over_claim_pct": 20.83821762241567,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 208262.80452627115,
+            "pooled_over_claim_pct": 20.074670471833247,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 370565.53691379644,
+            "pooled_over_claim_pct": 7.266739084308021,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 331379.8018940162,
+            "pooled_over_claim_pct": 20.769682352885088,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 324243.89026229864,
+            "pooled_over_claim_pct": 21.171052870233773,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 256078.91327825535,
+            "pooled_over_claim_pct": 21.38818956354976,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 420272.05440970644,
+            "pooled_over_claim_pct": 9.31860403229969,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 408039.9241453874,
+            "pooled_over_claim_pct": 24.030049403927585,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 403411.1136833213,
+            "pooled_over_claim_pct": 24.18976603157316,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 312588.02608416986,
+            "pooled_over_claim_pct": 25.727588427709048,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 511783.67401577637,
+            "pooled_over_claim_pct": 12.636873019454356,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 531136.2431264158,
+            "pooled_over_claim_pct": 23.74488588104043,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 509718.9848246987,
+            "pooled_over_claim_pct": 24.370724860752592,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 402449.91697627155,
+            "pooled_over_claim_pct": 25.462407676802084,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 641065.3951284826,
+            "pooled_over_claim_pct": 13.392094893676823,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed4_fold2",
+      "status": "success",
+      "split_seed": 4,
+      "fold": 2,
+      "partition_sha256": "c75420e0b6a519c5c749a74148d14dc68f21e2c239aedf1cc8a95e81525ff4db",
+      "n_train": 63006,
+      "n_calibration": 23617,
+      "n_test": 21703,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.4217664682055877,
+      "calibration_beta": 0.8229579300948557,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 308017.77386168344,
+            "pooled_over_claim_pct": -1.3246251176724797,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 303135.2728426782,
+            "pooled_over_claim_pct": -0.5451360541657629,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 256443.15595096818,
+            "pooled_over_claim_pct": 0.7670626930912066,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 341523.28788364225,
+            "pooled_over_claim_pct": -10.962569465869919,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 443698.2910994221,
+            "pooled_over_claim_pct": -0.4133027038003382,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 441625.3766699702,
+            "pooled_over_claim_pct": -0.18177494872455446,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 379649.31062628055,
+            "pooled_over_claim_pct": 1.1193403175983523,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 485285.3622352384,
+            "pooled_over_claim_pct": -10.556322241454609,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 536200.3629518911,
+            "pooled_over_claim_pct": -0.7334005693438375,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 521595.2765101475,
+            "pooled_over_claim_pct": 0.5893665233816562,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 459250.14566246246,
+            "pooled_over_claim_pct": 0.9510271028431215,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 572861.8388891843,
+            "pooled_over_claim_pct": -10.118276505188197,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 621465.7903103397,
+            "pooled_over_claim_pct": 0.08649237052561722,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 615881.8409758132,
+            "pooled_over_claim_pct": 0.43888935586112654,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 569026.1895145348,
+            "pooled_over_claim_pct": 0.9596498841332531,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 675691.2137569573,
+            "pooled_over_claim_pct": -8.611595749878985,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 839304.7754320697,
+            "pooled_over_claim_pct": -2.360852251939658,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 841402.0398953323,
+            "pooled_over_claim_pct": -2.538385258716537,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 801113.9401185889,
+            "pooled_over_claim_pct": -2.5433145623976383,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 895965.5442588923,
+            "pooled_over_claim_pct": -8.765405036476318,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 1067785.396332084,
+            "pooled_over_claim_pct": -3.3556586311603653,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 1075726.1565522582,
+            "pooled_over_claim_pct": -3.802492135267444,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 1008231.3604362137,
+            "pooled_over_claim_pct": -2.6046259832109775,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 1105703.7950883566,
+            "pooled_over_claim_pct": -6.7810713864786445,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed4_fold3",
+      "status": "success",
+      "split_seed": 4,
+      "fold": 3,
+      "partition_sha256": "c75420e0b6a519c5c749a74148d14dc68f21e2c239aedf1cc8a95e81525ff4db",
+      "n_train": 53810,
+      "n_calibration": 30899,
+      "n_test": 23617,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 104,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.9381286623798866,
+      "calibration_beta": 0.5604090875937523,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 161112.75465337434,
+            "pooled_over_claim_pct": 18.035530719847685,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 156972.44648029227,
+            "pooled_over_claim_pct": 18.361515775332048,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 93982.72407779864,
+            "pooled_over_claim_pct": 16.401793351271696,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 229196.41921302874,
+            "pooled_over_claim_pct": 1.3629702430419524,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 239879.4233702052,
+            "pooled_over_claim_pct": 17.896415386107115,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 241400.97288427808,
+            "pooled_over_claim_pct": 17.097584011472872,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 179573.2952912361,
+            "pooled_over_claim_pct": 13.57816317016758,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 333982.8242659428,
+            "pooled_over_claim_pct": 1.033999052853657,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 300865.3583929192,
+            "pooled_over_claim_pct": 15.980586085508325,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 299297.85222849017,
+            "pooled_over_claim_pct": 15.64194132515829,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 225351.312109478,
+            "pooled_over_claim_pct": 12.730128727398823,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 385357.0462574739,
+            "pooled_over_claim_pct": 0.9879735488616074,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 346327.4070244054,
+            "pooled_over_claim_pct": 15.178112823903737,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 336814.9615670768,
+            "pooled_over_claim_pct": 14.699269376055769,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 291462.7452994996,
+            "pooled_over_claim_pct": 12.829013811471553,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 434901.66994121537,
+            "pooled_over_claim_pct": 2.7236988949362853,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 481937.9760348739,
+            "pooled_over_claim_pct": 15.053382961183079,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 468104.4802138467,
+            "pooled_over_claim_pct": 14.17584624384573,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 422824.66243124066,
+            "pooled_over_claim_pct": 12.72658461289455,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 556862.5227736784,
+            "pooled_over_claim_pct": 2.9954925792952722,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 609329.6913366055,
+            "pooled_over_claim_pct": 15.475689318271773,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 599603.9479093178,
+            "pooled_over_claim_pct": 14.67179122747646,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 529180.0886201255,
+            "pooled_over_claim_pct": 13.411223471474159,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 680471.700424163,
+            "pooled_over_claim_pct": 5.373079009906417,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed5_fold0",
+      "status": "success",
+      "split_seed": 5,
+      "fold": 0,
+      "partition_sha256": "bd425d241cf81f6687511981235cfc0f94e175c6564b2332f8a2a72a7a6bcac6",
+      "n_train": 52073,
+      "n_calibration": 25936,
+      "n_test": 30317,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 104,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.38059434392859437,
+      "calibration_beta": 0.8262099495273372,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 235634.915719268,
+            "pooled_over_claim_pct": 1.9902960243558443,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 232367.6761214763,
+            "pooled_over_claim_pct": 2.4599498752358473,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 163391.10937588132,
+            "pooled_over_claim_pct": 2.29831663925472,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 256247.00629877677,
+            "pooled_over_claim_pct": -8.445587959741259,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 316624.138235362,
+            "pooled_over_claim_pct": 5.298803183194263,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 318631.26575284445,
+            "pooled_over_claim_pct": 4.789004455167374,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 239468.58691417257,
+            "pooled_over_claim_pct": 3.08371705710584,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 362115.0277402367,
+            "pooled_over_claim_pct": -5.613200799297312,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 370125.0308648803,
+            "pooled_over_claim_pct": 5.176194790136612,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 365484.9579794399,
+            "pooled_over_claim_pct": 5.277605478055526,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 294064.8726181355,
+            "pooled_over_claim_pct": 2.890290204204095,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 425011.48935622594,
+            "pooled_over_claim_pct": -4.309303183670881,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 427294.6661722821,
+            "pooled_over_claim_pct": 4.728441981016374,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 420233.7329659826,
+            "pooled_over_claim_pct": 4.7834943637490674,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 374103.49836245104,
+            "pooled_over_claim_pct": 3.580259404281437,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 486158.17276556545,
+            "pooled_over_claim_pct": -4.061380246045173,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 594140.7774387413,
+            "pooled_over_claim_pct": 2.862722501637314,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 587980.0133351454,
+            "pooled_over_claim_pct": 3.0433317587657305,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 545789.1936423794,
+            "pooled_over_claim_pct": 2.3206054679786865,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 650338.6211067511,
+            "pooled_over_claim_pct": -4.171010436929355,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 737746.2525644829,
+            "pooled_over_claim_pct": 3.214888181311098,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 740767.1528631772,
+            "pooled_over_claim_pct": 2.873241205833691,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 687122.0085790905,
+            "pooled_over_claim_pct": 2.070603816627371,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 806319.4879275763,
+            "pooled_over_claim_pct": -3.603639695466765,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed5_fold1",
+      "status": "success",
+      "split_seed": 5,
+      "fold": 1,
+      "partition_sha256": "bd425d241cf81f6687511981235cfc0f94e175c6564b2332f8a2a72a7a6bcac6",
+      "n_train": 52363,
+      "n_calibration": 30027,
+      "n_test": 25936,
+      "n_train_manufacturers": 206,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 104,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -1.1350422741536685,
+      "calibration_beta": 0.46112036543401846,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 201373.7763954078,
+            "pooled_over_claim_pct": 14.808317570882561,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 203075.68432939387,
+            "pooled_over_claim_pct": 13.849375449490083,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 126159.967372268,
+            "pooled_over_claim_pct": 14.37874500024665,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 251807.86780523745,
+            "pooled_over_claim_pct": -0.38755409122152595,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 291094.2290132375,
+            "pooled_over_claim_pct": 14.226020492097982,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 287447.80054375745,
+            "pooled_over_claim_pct": 14.1961775978148,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 200209.5783350511,
+            "pooled_over_claim_pct": 13.733262186992164,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 353424.52391484485,
+            "pooled_over_claim_pct": 1.4371106129582634,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 337576.6764023089,
+            "pooled_over_claim_pct": 14.038528249032517,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 301266.77288535883,
+            "pooled_over_claim_pct": 16.529274580273057,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 220738.19609117738,
+            "pooled_over_claim_pct": 14.938536394597511,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 406144.8192893947,
+            "pooled_over_claim_pct": 1.3092056977404907,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 364181.044486099,
+            "pooled_over_claim_pct": 15.640901657944097,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 345868.64945583075,
+            "pooled_over_claim_pct": 16.251269172134933,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 277109.518327932,
+            "pooled_over_claim_pct": 15.681480534598574,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 449311.9740090128,
+            "pooled_over_claim_pct": 3.0039825502505626,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 455507.07336711616,
+            "pooled_over_claim_pct": 17.06944607787543,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 453648.8802676909,
+            "pooled_over_claim_pct": 16.81078593923869,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 367760.60321515374,
+            "pooled_over_claim_pct": 17.54532607048961,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 580368.5824642328,
+            "pooled_over_claim_pct": 4.3589693787218105,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 558826.6001650365,
+            "pooled_over_claim_pct": 17.985041108926502,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 555463.3151182764,
+            "pooled_over_claim_pct": 17.738267365334185,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 428132.47875800065,
+            "pooled_over_claim_pct": 19.06944448885733,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 704283.1898274269,
+            "pooled_over_claim_pct": 5.987069457797155,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed5_fold2",
+      "status": "success",
+      "split_seed": 5,
+      "fold": 2,
+      "partition_sha256": "bd425d241cf81f6687511981235cfc0f94e175c6564b2332f8a2a72a7a6bcac6",
+      "n_train": 56253,
+      "n_calibration": 22046,
+      "n_test": 30027,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -1.3131126761395326,
+      "calibration_beta": 0.3922478800429379,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 186150.4697087953,
+            "pooled_over_claim_pct": 15.11088616099775,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 193358.06666201743,
+            "pooled_over_claim_pct": 12.468980293078527,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 160077.76551048565,
+            "pooled_over_claim_pct": 7.213406093316025,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 258119.40873507972,
+            "pooled_over_claim_pct": -9.386035119538493,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 279685.1983585693,
+            "pooled_over_claim_pct": 13.167840130957911,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 271462.00433343364,
+            "pooled_over_claim_pct": 12.685300263145301,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 208802.62453777343,
+            "pooled_over_claim_pct": 10.8645013208656,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 359635.87791965756,
+            "pooled_over_claim_pct": -6.160245728672805,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 336134.30215526244,
+            "pooled_over_claim_pct": 12.41010419320009,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 344377.2375005231,
+            "pooled_over_claim_pct": 10.157568865814053,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 258563.2079351945,
+            "pooled_over_claim_pct": 10.693373344909068,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 420862.23300445196,
+            "pooled_over_claim_pct": -4.06223956950156,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 371590.37876402715,
+            "pooled_over_claim_pct": 13.467102322827351,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 386157.6999668315,
+            "pooled_over_claim_pct": 10.75885386224799,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 330347.77815456013,
+            "pooled_over_claim_pct": 10.502229781473359,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 485965.15835430694,
+            "pooled_over_claim_pct": -1.6890371773126687,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 490095.8149689104,
+            "pooled_over_claim_pct": 14.093260497291451,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 514974.9586045696,
+            "pooled_over_claim_pct": 10.769880762709827,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 450607.1035931379,
+            "pooled_over_claim_pct": 11.257655931105718,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 612483.0528824459,
+            "pooled_over_claim_pct": 0.06725487687883559,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 650759.3410827462,
+            "pooled_over_claim_pct": 12.26098952214438,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 670809.1710440565,
+            "pooled_over_claim_pct": 10.266698116415155,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 594148.6224286823,
+            "pooled_over_claim_pct": 10.298587722113098,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 770039.0044904515,
+            "pooled_over_claim_pct": 1.3356855778249617,
+            "n_projects": 122
+          }
+        }
+      }
+    },
+    {
+      "run_id": "seed5_fold3",
+      "status": "success",
+      "split_seed": 5,
+      "fold": 3,
+      "partition_sha256": "bd425d241cf81f6687511981235cfc0f94e175c6564b2332f8a2a72a7a6bcac6",
+      "n_train": 55963,
+      "n_calibration": 30317,
+      "n_test": 22046,
+      "n_train_manufacturers": 207,
+      "n_calibration_manufacturers": 103,
+      "n_test_manufacturers": 103,
+      "n_eligible_classes": 7,
+      "n_eligible_projects": 203,
+      "calibration_alpha": -0.532072369571426,
+      "calibration_beta": 0.7468042463001261,
+      "by_budget": {
+        "1": {
+          "point": {
+            "mean_realized_saving_kgco2e": 281944.00755461276,
+            "pooled_over_claim_pct": 2.0792446979107018,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 287188.96245194285,
+            "pooled_over_claim_pct": 0.9382899468825673,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 173667.15526602248,
+            "pooled_over_claim_pct": 9.141870313260466,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 311317.1470417348,
+            "pooled_over_claim_pct": -6.540371064608195,
+            "n_projects": 203
+          }
+        },
+        "2": {
+          "point": {
+            "mean_realized_saving_kgco2e": 401396.1092237023,
+            "pooled_over_claim_pct": 3.1738909305679566,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 395868.0296510006,
+            "pooled_over_claim_pct": 3.733601337818014,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 284626.5030029528,
+            "pooled_over_claim_pct": 7.619933965886945,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 440234.26832907245,
+            "pooled_over_claim_pct": -6.537877340854698,
+            "n_projects": 203
+          }
+        },
+        "3": {
+          "point": {
+            "mean_realized_saving_kgco2e": 471844.4154416677,
+            "pooled_over_claim_pct": 3.7179188919679627,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 466840.8840219104,
+            "pooled_over_claim_pct": 4.1935522433513865,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 352461.8961517082,
+            "pooled_over_claim_pct": 7.257657991005347,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 520288.9981231706,
+            "pooled_over_claim_pct": -5.739234587328737,
+            "n_projects": 203
+          }
+        },
+        "5": {
+          "point": {
+            "mean_realized_saving_kgco2e": 555145.0506483259,
+            "pooled_over_claim_pct": 3.4683303396185017,
+            "n_projects": 203
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 552982.5724869015,
+            "pooled_over_claim_pct": 3.524087125321992,
+            "n_projects": 203
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 468367.04520817543,
+            "pooled_over_claim_pct": 5.784002280810242,
+            "n_projects": 203
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 598058.4809645445,
+            "pooled_over_claim_pct": -3.097440390836486,
+            "n_projects": 203
+          }
+        },
+        "10": {
+          "point": {
+            "mean_realized_saving_kgco2e": 728965.0579851277,
+            "pooled_over_claim_pct": 2.7263947442680636,
+            "n_projects": 155
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 690366.8410947378,
+            "pooled_over_claim_pct": 5.05187159344375,
+            "n_projects": 155
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 638525.4231236317,
+            "pooled_over_claim_pct": 5.254885779048441,
+            "n_projects": 155
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 784262.7695197624,
+            "pooled_over_claim_pct": -5.171627249911224,
+            "n_projects": 155
+          }
+        },
+        "20": {
+          "point": {
+            "mean_realized_saving_kgco2e": 914498.7596440664,
+            "pooled_over_claim_pct": 2.710497198682687,
+            "n_projects": 122
+          },
+          "certified": {
+            "mean_realized_saving_kgco2e": 867546.5746651386,
+            "pooled_over_claim_pct": 5.049383420434207,
+            "n_projects": 122
+          },
+          "mass": {
+            "mean_realized_saving_kgco2e": 808409.2985122723,
+            "pooled_over_claim_pct": 5.097955296322301,
+            "n_projects": 122
+          },
+          "oracle": {
+            "mean_realized_saving_kgco2e": 973520.5600414231,
+            "pooled_over_claim_pct": -4.513919159907049,
+            "n_projects": 122
+          }
+        }
+      }
+    }
+  ],
+  "failures": []
+}
